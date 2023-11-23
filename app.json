@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "my-nativewind-app",
+    "slug": "my-nativewind-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "my-nativewind-app"
+}
