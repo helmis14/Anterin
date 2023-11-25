@@ -1,4 +1,11 @@
-import { View, Text, SafeAreaView, Image, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -7,6 +14,7 @@ import {
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
 } from "react-native-heroicons/outline";
+import Categories from "../components/Categories";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -19,7 +27,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView className="bg-white pt-11">
       {/* Header */}
-      <View className="flex-row pb-3 items-center mx-4 space-x-2 px-1">
+      <View className="flex-row pb-3 items-center mx-4 space-x-2">
         <Image
           source={{
             uri: "https://links.papareact.com/wru",
@@ -38,8 +46,7 @@ const HomeScreen = () => {
       </View>
 
       {/* Search */}
-
-      <View className="flex-row items-center space-x-2 pb-2 mx-4 px-1">
+      <View className="flex-row items-center space-x-2 pb-2 mx-4">
         <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
           <MagnifyingGlassIcon color="gray" size={20} />
           <TextInput
@@ -50,6 +57,19 @@ const HomeScreen = () => {
         </View>
         <AdjustmentsVerticalIcon color="#00CCBB" />
       </View>
+
+      {/* Body */}
+      <ScrollView
+        className="bg-gray-100"
+        contentContainerStyle={{
+          paddingBottom: 100,
+        }}
+      >
+        {/* Categories */}
+        <Categories />
+
+        {/* Featured Rows */}
+      </ScrollView>
     </SafeAreaView>
   );
 };
